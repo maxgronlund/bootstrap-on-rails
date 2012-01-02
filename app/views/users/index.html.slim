@@ -1,0 +1,86 @@
+.container
+  .content.top-void
+    .page-header
+      h1 Users <small>All the happy members</small>
+    .row
+      .span4
+        h3 Sign up a newbe?
+        br
+        = link_to 'New user', new_user_path, :class =>"btn teaser large"
+    
+      .span12
+        h2 Find
+        = form_tag users_path, :method => 'get', :id => "products_search" do
+          = text_field_tag :search, params[:search] 
+          '&nbsp;
+          = submit_tag t('system.search'), :name => nil, :class => 'btn primary'
+          '&nbsp;
+          = link_to t('system.show_all'), users_path, :class => 'btn'
+        = render 'js/table_sorter'
+        table class="bordered-table zebra-striped" id="sortTableExample"
+          thead
+            tr
+              th Name
+              th Email
+              th Role
+              th Manage
+          tbody
+            - @users.each do |user|
+              
+              tr
+                td = link_to user.name, user, :rel=>'twipsy', :title=>'Show'
+                td =user.email
+                td =user.role
+                td 
+                  =link_to image_tag('loop_16.png'), user, :rel=>'twipsy', :title=>'Show'
+                  '&nbsp;
+                  =link_to image_tag('pencil_16.png'), edit_user_path(user), :rel=>'twipsy', :title=>'Edit'
+                  '&nbsp;
+                  - if user.id != 1
+                    =link_to image_tag('delete_16.png'), user, :rel=>'twipsy', :title=>'Delete', :confirm => 'Are you sure?', :method => :delete
+                  - else
+                    '&nbsp;
+                    = link_to ' ?', '#', :rel=>'twipsy', :title=>'You cant delete me'
+              
+        = paginate @users
+        br
+    
+    = render 'shared/twipsy'
+    
+
+/    = t('user.all_users')
+/
+/  = form_tag users_path, :method => 'get', :id => "products_search" do
+/    = text_field_tag :search, params[:search] 
+/    = submit_tag t('system.search'), :name => nil
+/    '
+/    = link_to t('system.show_all'), users_path
+/
+/div class="sort-list-header grid-12"
+/  .grid-3.alpha
+/    = sortable 'name', t('user.name')
+/  .grid-3
+/    = sortable 'email', t('user.email')
+/  .grid-3
+/    = sortable 'role', t('user.role')
+/  .grid-3.omega
+/.grid-12  
+/  - @users.each do |user|
+/    div class="grid-12 alpha omega #{cycle('row-flip', 'row-flop')}"
+/      .grid-3.alpha
+/        =user.name
+/      .grid-3
+/        =user.email
+/      .grid-3
+/        =user.role
+/      .grid-3.omega
+/        = link_to t('system.show'), user
+/        | | 
+/        = link_to t('system.edit'), edit_user_path(user)
+/        - unless user.is_first_user?
+/          | | 
+/          = link_to t('system.delete'), user, :confirm => 'Are you sure?', :method => :delete
+/  = link_to t('user.create_user'), new_user_path
+/      
+/  
+/

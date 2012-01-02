@@ -1,0 +1,19 @@
+/*
+*  NOT WORKING
+*
+*
+*/
+
+$ cd /Users/synthmax/Dropbox/bootstrap/app/twitter
+$ make build
+copy bootstrap.css to assets/stylesheets
+
+/*
+*  DO THIS	
+*
+*
+*/
+
+download and install the less.app
+drop the lib folder on it
+compilation is done automatic upon save

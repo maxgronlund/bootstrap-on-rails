@@ -1,0 +1,31 @@
+/- [:notice, :warning, :error, :failure, :success].each do |key|
+/  - unless flash[key].blank?
+/    .message-top
+/      div class="alert-message warning fade in" data-alert="alert"
+/        = link_to 'x', root_path, :class => 'close'
+/        /p <strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.
+/        = flash[key]
+/
+
+- unless flash.empty?
+  .container
+    .content
+      .message-top
+        - unless flash[:notice].blank?
+            div class="alert-message warning fade in" data-alert="alert"
+              = link_to 'x', root_path, :class => 'close'
+              /p <strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.
+              = flash[:notice]
+        
+        - unless flash[:error].blank?
+            div class="alert-message error fade in" data-alert="alert"
+              = link_to 'x', root_path, :class => 'close'
+              /p <strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.
+              = flash[:error]
+        
+        - unless flash[:alert].blank?
+            div class="alert-message error fade in" data-alert="alert"
+              = link_to 'x', root_path, :class => 'close'
+              /p <strong>Holy guacamole!</strong> Best check yo self, you’re not looking too good.
+              = flash[:alert]
+      

@@ -1,0 +1,77 @@
+= render 'banner'
+= render 'shared/messages'
+.container
+  .page-header
+    h1 Overview <small>what the heck is this?</small>
+  .row
+    .span6
+      h2 Bootstrap, from Twitter
+      'Bootstrap is a toolkit from Twitter designed to kickstart development of webapps and sites.It includes base CSS and HTML for typography, forms, buttons, tables, grids, navigation, and more.
+      hr
+      h3 Not a member?
+      .row
+        .span2
+          = link_to 'sign up', sign_up_path, :class =>"btn teaser large"
+        .span4
+          'You are welcome to sign up to try the CMS system although the project is mostly for internal use 
+      
+      hr
+      h3 Cool features!
+      .row
+        .span2
+          = link_to 'Popover', root_path, :rel=>"popover", :title=>"A title", :class=>"btn danger", :'data-content'=>"And here's some amazing content. It's very engaging. right?"
+          = render 'shared/popover'
+        .span4
+          'Bootstrap is loaded with a ton of javascripts selected ad tested by the brave folks at Twitter  
+  
+  
+    
+      /<a href="#" class="btn danger" rel="popover" title="A title" data-content="And here's some amazing content. It's very engaging. right?">hover for popover</a>
+    /class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]} top-void") 
+    .span10
+      .row
+        .span5
+          h3 Ruby on Rails
+          'Ruby on Rails is a breakthrough in lowering the barriers of entry to programming. Powerful web applications that formerly might have taken weeks or months to develop can be produced in a matter of days.
+          br
+          'This project is a starting point for a websites. It's based on Rails 3.1 and 
+          = link_to 'Bootstrap', 'http://twitter.github.com/bootstrap/', :rel=>'twipsy', :title=>'Nice tooltip'
+          '&nbsp;from twitter.
+          br
+          br
+          h4 Features
+          ul
+            li Authorization
+            li Role based user management
+            li Pagination intergation with Bootstrap
+            li Image cropper for Avatars
+            li Markdown
+            li Slim html code
+            li Bootstrap css framework
+            li Upload
+        .span5
+          h3 Less the third wheel in a gig?
+          = link_to 'Less', 'http://less.org/', :rel=>'twipsy', :title=>'Nice tooltip' 
+          '&nbsp;is a dynamic stylesheet language used to create Bootstrap. My goal with this project has been to be able to modify the <span class="label">variables.less</span> file as intended to customize the look and feel of bootstrap.
+          br
+          br
+          strong Rails integration
+          'I have tried tree different gems
+          br
+          ul
+            li less-rails
+            li less-rails-bootstrap
+            li compass-twitter-bootstrap
+          'The cool thing about these gems is that they handles the hassle by pulling the code from github and they build seamlessly, but this is also the Achilles heel for serval reasons.
+          br
+          br
+          ol
+            li With the less-rails-bootstrap gem I loose the ability to customize Bootstraps variables.less file directly
+            li If I go with the compass-twitter-bootstrap gem I loose direct updates from the twitter team   
+          strong the solution 
+          'I installed the Less.app and added a library named Twitter to the project. Every time I modify the variables.less file it compiles a bootstrapp.css file in the assets/stylesheets folder.
+  
+      
+  
+  = render 'shared/twipsy'
+  

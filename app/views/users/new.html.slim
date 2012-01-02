@@ -1,0 +1,47 @@
+= simple_form_for @user, :validate => true do |f| 
+  .container
+    .content.top-void
+      = render 'shared/error_messages', :taget => @user
+      .page-header
+       h1 Sign up <small>Join the club</small>
+       .row
+         .span6
+           h3 Role based user management
+           'Althoug the site is tiny it has the features needed by a community site. different users can have different roles
+    
+         .span10
+           fieldset
+             legend Account info
+             .clearfix
+               label for="xlInput" name
+               = f.input :name, :label => false, :input_html => {:class =>"user_name"}
+             .clearfix
+               label email
+               = f.input :email, :label => false
+             .clearfix
+               label password
+               = f.input :password, :label => false
+             .clearfix
+               label password confirmation
+               = f.input :password_confirmation, :label => false
+             .clearfix
+               label image
+               = f.input :image, :label => false, :input_html => {:class =>"user_name"}
+               = f.hidden_field :image_cache
+    
+             - if @user.image.present?
+               br
+               .field
+                 = f.check_box :remove_image
+                 = t('image.remove_image')
+             - if current_user && current_user.admin_or_super?
+               - unless @user.id ==1
+                 .clearfix
+                   label role
+                   = f.input :role , :include_blank => false, :label => false , :collection => User::ROLES
+           /br
+           .actions
+             = f.submit t('system.save'), :class =>"btn primary"
+             '&nbsp;
+             = link_to 'cancel', :back, :class =>"btn"
+     

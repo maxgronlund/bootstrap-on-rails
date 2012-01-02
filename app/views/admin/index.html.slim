@@ -1,0 +1,17 @@
+.container
+  .content.top-void
+    h1 Administration <small>You are the master of the site</small>
+  .row
+    .span4
+      h3 Need help?
+      'He he you have to figure it out by your self
+    .span12
+      .row
+        .span4
+          h4 = t('system.site_management')
+        .span4
+          h4 = t('system.user_management')
+          = link_to t('user.index'), users_path
+        .span4
+          h4 = t('system.content_management')
+          = link_to t('text_content.index'), text_contents_path

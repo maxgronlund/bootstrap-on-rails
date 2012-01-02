@@ -1,0 +1,8 @@
+= simple_form_for @text_content, :validate => true do |f|
+  = render 'shared/error_messages', :taget => @text_content
+  = f.input :identity
+  = f.input :title
+  .field
+    = f.input :body
+  .actions
+    = f.submit t('system.save')

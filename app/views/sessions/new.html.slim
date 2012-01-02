@@ -1,0 +1,49 @@
+.container
+  .content.top-void
+    = render 'shared/messages'
+    .page-header
+      h1 Sign in <small>Or sign up</small>
+    .row
+      .span6
+        h3 Not a member
+        = link_to 'sign up', sign_up_path, :class =>"btn teaser large"
+        hr 
+        h3 Lost the keys?
+        br
+        = link_to "reset password", new_password_reset_path, :class =>'btn danger'
+      .span10
+        h2 Main content
+        = form_tag sessions_path do
+          .inputs
+            'email
+            br
+            = text_field_tag :email, params[:email]
+            br
+            'password
+            br
+            = password_field_tag :password
+            br
+            = check_box_tag :remember_me
+            '&nbsp; remember me
+          .actions
+            = submit_tag  'sign in', :class =>"btn primary"
+            '&nbsp;
+            = link_to 'cancel', :back, :class =>"btn"
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

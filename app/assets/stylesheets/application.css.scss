@@ -1,0 +1,61 @@
+/*
+ * This is a manifest file that'll automatically include all the stylesheets available in this directory
+ * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
+ * the top of the compiled file, but it's generally better to create a new file per style scope.
+ *= require_self
+ *= require_tree . 
+
+*/
+
+/*$color_gray: #222;*/
+
+@import "compass/css3";
+@import "partials/color";
+@import "compass/css3/gradient";
+
+/*@import "partials/font";*/
+
+html, body {
+  background-color: #fff;
+  position: relative;
+}
+body {
+  padding-top: 40px; /* 40px to make the container go all the way to the bottom of the topbar */
+}
+.container > footer p {
+  text-align: center; /* center align it with the container */
+}
+
+section {
+    padding-top: 60px;
+}
+
+.user_name{
+	width:270px;
+}
+
+.top-void{
+	padding-top:50px;
+}
+
+.message-top{
+	padding-top:12px;
+}
+
+.btn.teaser {
+	background-color: #fa2;
+	@include background-image(linear-gradient(center top, #fe6, #fa2)); 
+}
+
+.field_with_errors .error{
+	color:#f00;
+	margin-left:8px;
+}
+
+/* JCrop preview */
+.preview {
+    width:100px;
+    height:100px;
+    overflow:hidden;
+}
+

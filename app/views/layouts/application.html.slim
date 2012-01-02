@@ -1,0 +1,24 @@
+doctype html
+html
+  head
+    title Bootstrap on Rails
+
+    /[if lt IE 9]
+      script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
+
+    javascript:
+      var session_key      = '#{cookies[Rails.application.config.session_options[:key]]}';
+      var session_key_name = '#{Rails.application.config.session_options[:key]}';
+    = yield :head 
+
+  body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]}") 
+    
+    /.div class=("background_grid" if grid_is_on?)
+    = render "shared/top_menu"
+    = yield
+    /= render "shared/footer"
+      
+

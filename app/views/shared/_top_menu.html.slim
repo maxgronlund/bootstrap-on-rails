@@ -1,0 +1,23 @@
+.topbar data-scrollspy="scrollspy"
+  .topbar-inner
+    .container
+      = link_to 'Bootstrap on Rails', root_path, :class => 'brand'
+      ul class="nav"
+        li class="home" = link_to 'Home', root_path
+        - if can_edit?
+          li class="admin" = link_to 'Admin', admin_index_path
+      
+      - if  current_user
+        .pull-right
+          ul class="nav"
+            li class="user" = link_to current_user.name, current_user
+            li class="log_out" = link_to 'Log out', log_out_path
+      - else
+        .pull-right
+          ul class="nav"
+            li class="log_out" = link_to 'Log in', log_in_path
+      /- else
+      /  = form_tag(sessions_path, options = {:class=>"pull-right"}) do
+      /    = text_field_tag :email, params[:email], :class =>"input-small", :placeholder => "email"
+      /    = password_field_tag :password, nil, options = {:class =>"input-small", :placeholder => "password"} 
+      /    = submit_tag  'sign in', :class => 'bnt'
