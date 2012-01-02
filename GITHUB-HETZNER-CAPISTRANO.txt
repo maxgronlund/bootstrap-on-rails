@@ -32,16 +32,16 @@ $ git remote add template git://github.com/maxgronlund/rails-template-31.git
 1: edit line 11 and 24 in the config/deploy.rb file
 2: $ cap deploy:setup
 3: $ ssh deploy@46.4.64.81 								<-- CHANGE IP ADDRESS
-4: $ mysqladmin -u root create project_name
-5: $ mkdir /var/www/PROJECTNAME/shared/config
-6: $ mkdir /var/www/PROJECTNAME/shared/uploads
-7: $ cat > /var/www/PROJECTNAME/shared/config/database.yml
+4: $ mysqladmin -u root create bootstrap-on-rails
+5: $ mkdir /var/www/bootstrap-on-rails/shared/config
+6: $ mkdir /var/www/bootstrap-on-rails/shared/uploads
+7: $ cat > /var/www/bootstrap-on-rails/shared/config/database.yml
 ---
 8: $ production:
  adapter: mysql2
  encoding: utf8
  reconnect: false
- database: PROJECTNAME
+ database: bootstrap-on-rails
  pool: 5
  username: root
  password:
@@ -53,15 +53,15 @@ $ git remote add template git://github.com/maxgronlund/rails-template-31.git
 ---
 11: $ ssh root@46.4.64.81 								<-- CHANGE IP ADDRESS
 12: type password
-13: $ cat > /etc/apache2/sites-available/haxecasts
+13: $ cat > /etc/apache2/sites-available/bootstrap-on-rails
 
 14: $<VirtualHost *:80>
-     ServerName PROJECTNAME.org
-     ServerAlias *.PROJECTNAME.org
+     ServerName bootstrap-on-rails.com
+     ServerAlias *.bootstrap-on-rails.com
      XSendfile on
-     XSendFilePath /var/www/PROJECTNAME
-     DocumentRoot /var/www/PROJECTNAME/current/public
-     <Directory /var/www/PROJECTNAME/current/public>
+     XSendFilePath /var/www/bootstrap-on-rails
+     DocumentRoot /var/www/bootstrap-on-rails/current/public
+     <Directory /var/www/bootstrap-on-rails/current/public>
        ExpiresActive On
        <FilesMatch "\.(ico|gif|jpe?g|png|js|css)$">
          ExpiresDefault "access plus 1 year"
@@ -70,7 +70,7 @@ $ git remote add template git://github.com/maxgronlund/rails-template-31.git
 </VirtualHost>
 
 15: end cat $ ctrl-d
-16: $ a2ensite PROJECTNAME
+16: $ a2ensite bootstrap-on-rails
 17: $ /etc/init.d/apache2 restart
 18: log out $ ctrl-d 
 ---
@@ -79,7 +79,7 @@ $ git remote add template git://github.com/maxgronlund/rails-template-31.git
 21: log out $ ctrl-d
 ---
 22: $ ssh deploy@46.4.64.81 							<-- CHANGE IP ADDRESS
-23: $ cd /var/www/PROJECTNAME/current
+23: $ cd /var/www/bootstrap-on-rails/current
 24: $ RAILS_ENV=production rake db:seed
 ---
 25: $ RAILS_ENV=production  rake ts:conf
