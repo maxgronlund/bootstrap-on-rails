@@ -22,7 +22,7 @@ class Ability
       end
     else
       # When not logged in
-      #can :create, User # <----------- Uncomment this to alow users to signup by them self
+      can :create, User # <----------- Uncomment this to alow users to signup by them self
       can :read, User
       can :read, TextContent
       

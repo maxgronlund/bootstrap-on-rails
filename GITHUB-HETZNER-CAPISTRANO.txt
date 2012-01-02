@@ -81,6 +81,7 @@ $ git remote add template git://github.com/maxgronlund/rails-template-31.git
 22: $ ssh deploy@46.4.64.81 							<-- CHANGE IP ADDRESS
 23: $ cd /var/www/bootstrap-on-rails/current
 24: $ RAILS_ENV=production rake db:seed
+24b: $ bundle exec rake db:migrate RAILS_ENV=production
 ---
 25: $ RAILS_ENV=production  rake ts:conf
 26: $ RAILS_ENV=production rake ts:index
