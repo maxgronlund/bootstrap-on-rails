@@ -9,7 +9,7 @@ require 'bundler/capistrano'
 load 'deploy/assets'
 
 # main details
-set :application, "rails-sandbox"                               # <<< change name
+set :application, "bootstrap-on-rails"                               # <<< change name
 server "46.4.64.81", :app, :web, :db, :primary => true
 
 # server details
@@ -22,7 +22,7 @@ set :use_sudo, false
 
 # repo details
 set :scm , :git
-set :repository, "git@github.com:maxgronlund/rails-template-31.git"  # <<< change reposotory
+set :repository, "git@github.com:maxgronlund/bootstrap-on-rails.git"  # <<< change reposotory
 set :branch, "master"
 set :git_enable_submodules, 1
 
