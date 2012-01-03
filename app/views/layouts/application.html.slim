@@ -5,8 +5,12 @@ html
     = csrf_meta_tag
 
     -if mobile_device?
-      /= stylesheet_link_tag 'mobile' 
-      /= stylesheet_link_tag 'jquery.mobile-1.0.min'
+      = stylesheet_link_tag 'jquery-mobile-1.0.css'
+      = stylesheet_link_tag 'jqm-docs.css'
+      = javascript_include_tag 'jquery'
+      = javascript_include_tag 'jquery.mobile.themeswitcher'
+      = javascript_include_tag 'jqm-docs'
+      = javascript_include_tag 'jquery.mobile-1.0.min'
     -else
       /[if lt IE 9]
         script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'

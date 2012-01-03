@@ -23,5 +23,8 @@
 //= 07_bootstrap-tabs
 //= 08_bootstrap-buttons
 
+//= jqm-docs.js
+//= jquery.mobile-1.0.min.js
+//= jquery.mobile.themeswitcher.js
 
 
