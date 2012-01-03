@@ -4,7 +4,6 @@
  * the top of the compiled file, but it's generally better to create a new file per style scope.
  *= require_self
  *= require_tree . 
-
 */
 
 /*$color_gray: #222;*/
@@ -14,6 +13,14 @@
 @import "compass/css3/gradient";
 
 /*@import "partials/font";*/
+
+.mobile{
+
+  color:#f00;
+  background-color:#f00;
+  font-size:100px;
+
+}
 
 html, body {
   background-color: #fff;

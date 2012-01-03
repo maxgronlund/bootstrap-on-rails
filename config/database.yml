@@ -18,7 +18,7 @@ development:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: bootstrap_development
+  database: jquery_mobile_development
   pool: 5
   username: root
   password:
@@ -31,7 +31,7 @@ test:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: bootstrap_test
+  database: jquery_mobile_test
   pool: 5
   username: root
   password:
@@ -41,7 +41,7 @@ production:
   adapter: mysql2
   encoding: utf8
   reconnect: false
-  database: bootstrap_production
+  database: jquery_mobile_production
   pool: 5
   username: root
   password: 
