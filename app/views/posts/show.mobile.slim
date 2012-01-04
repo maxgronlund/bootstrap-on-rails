@@ -1,20 +1,15 @@
-
-
 .type-interior data-role="page"
   .foo data-role="header" data-theme="f"
     h1 Post
-    = link_to 'home', posts_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-right jqm-home"
+    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-right jqm-home"
     
 
+  .foo data-role="content"
+    .content-primary
+      h2 = @post.title
+      = @post.body
+      .foo data-role="controlgroup" data-type="horizontal" 
+        = link_to 'Back', posts_path, :'data-role'=>"button"
+        = link_to 'Edit', edit_post_path(@post), :'data-role'=>"button"
+        = link_to 'Delete', @post, :confirm => 'Are you sure?', :method => :delete, :'data-role'=>"button", :'data-icon'=>"delete"
 
-  p
-    b Title:
-    = @post.title
-  p
-    b Body:
-    = @post.body
-  
-  = link_to 'Edit', edit_post_path(@post)
-  '|
-  = link_to 'Back', posts_path
-  

@@ -1,16 +1,9 @@
-.type-home data-role="page"
-
-  .foo data-role="header"
-    h1 Login
-  
-  
-  .foo data-role="content"
-    .content-secondary
-      #jqm-homeheader
-        h1 Sign in
-      p Pixels on rails
+.type-interior data-role="page"
+  .foo data-role="header" data-theme="f"
+    h1 Log in
+    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-right jqm-home"
       
-
+  .foo data-role="content"
     .content-primary
       = form_tag sessions_path, :id => 'sign_in_form' do
 
@@ -28,7 +21,6 @@
           'Remember me
 
       .actions
-        = submit_tag  'sign in'
-        '&nbsp;
-        = link_to 'cancel', root_path
+        = submit_tag  'Sign in', :method => 'post'
+        = link_to 'Not a menber?', root_path, :'data-role'=>"button"
 

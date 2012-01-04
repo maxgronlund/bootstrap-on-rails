@@ -6,12 +6,14 @@
   .foo data-role="content"
     .content-primary
       h2 Find
+      
       = form_tag users_path, :method => 'get', :id => "products_search" do
         = text_field_tag :search, params[:search] 
-      
-        = submit_tag t('system.search'), :name => nil, :class => 'btn primary'
-        
-        = link_to t('system.show_all'), users_path, :'data-role'=>"button"
+        fieldset class="ui-grid-a"
+          .ui-block-a
+            = submit_tag t('system.search'), :name => nil, :'data-theme' => 'a'
+          .ui-block-b
+            = link_to t('system.show_all'), users_path, :'data-role'=>"button", :'data-theme' => 'd'
       
       /ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f"
       /  li data-role="list-divider"
@@ -27,7 +29,8 @@
               = image_tag(user.image_url:thumb)
               h3 = user.name
               p = user.role
-              
+      hr
+      = paginate @users     
               
 
       
@@ -37,12 +40,6 @@
 
 
 
-
-
-
-
-
-/= paginate @users
 
     
 

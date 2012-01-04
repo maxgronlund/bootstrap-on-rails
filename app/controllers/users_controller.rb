@@ -10,7 +10,7 @@ class UsersController < InheritedResources::Base
     #return_path = users_path # or request.referer
     session[:go_to_after_edit] = users_path
     #@users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(2)
-    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
+    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(2)
 
   end
 

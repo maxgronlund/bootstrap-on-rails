@@ -12,7 +12,7 @@ class PostsController < InheritedResources::Base
      @post = Post.new(params[:post])
 
      if @post.save
-       redirect_to @post, notice: 'Note was successfully created.'
+       redirect_to posts_url, notice: 'Post was successfully created.'
      else
        render action: "new"
      end
@@ -22,7 +22,7 @@ class PostsController < InheritedResources::Base
     @post = Post.find(params[:id])
 
     if @post.update_attributes(params[:post])
-      redirect_to @post, notice: 'Note was successfully updated.'
+      redirect_to posts_url, notice: 'Post was successfully updated.'
     else
       render action: "edit"
     end
