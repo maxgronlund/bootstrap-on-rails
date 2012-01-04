@@ -1,8 +1,13 @@
-h1 Editing post
+.type-home data-role="page"
 
-= render 'form'
-
-= link_to 'Show', @post
-'|
-= link_to 'Back', posts_path
-
+  .foo data-role="header"
+    h1 Edit post
+  
+  
+  .foo data-role="content"
+    .content-secondary
+      #jqm-homeheader
+        h1 Create post
+      p Pixels on rails
+    .content-primary
+      = render 'form'
