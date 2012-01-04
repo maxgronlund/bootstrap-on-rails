@@ -1,12 +1,28 @@
+/<div data-role="page" class="type-interior">
+/
+/	<div data-role="header" data-theme="f">
+/		<h1>Introduction</h1>
+/		
+/		
+/		<a href="../../" data-icon="home" data-iconpos="notext" data-direction="reverse" class="ui-btn-right jqm-home">Home</a>
+/
+/	</div><!-- /header -->
+
+.type-interior data-role="page"
+  .foo data-role="header" data-theme="f"
+    h1 Post
+    = link_to 'home', posts_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-right jqm-home"
+    
 
 
-p
-  b Title:
-  = @post.title
-p
-  b Body:
-  = @post.body
-
-= link_to 'Edit', edit_post_path(@post)
-'|
-= link_to 'Back', posts_path
+  p
+    b Title:
+    = @post.title
+  p
+    b Body:
+    = @post.body
+  
+  = link_to 'Edit', edit_post_path(@post)
+  '|
+  = link_to 'Back', posts_path
+  
