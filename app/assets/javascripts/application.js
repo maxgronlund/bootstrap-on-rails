@@ -7,7 +7,7 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.Jcrop.min
-//= require_tree ../../../vendor/assets/javascripts
+// require_tree ../../../vendor/assets/javascripts
 // require_directory .
 //= require rails.validations
 //= require jquery.tablesorter.min
@@ -23,8 +23,6 @@
 //= 07_bootstrap-tabs
 //= 08_bootstrap-buttons
 
-//= jqm-docs.js
-//= jquery.mobile-1.0.min.js
-//= jquery.mobile.themeswitcher.js
+
 
 

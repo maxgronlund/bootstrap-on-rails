@@ -2,7 +2,6 @@
   = render 'shared/error_messages', :taget => @text_content
   = f.input :identity
   = f.input :title
-  .field
-    = f.input :body
+  = f.input :body
   .actions
     = f.submit t('system.save')

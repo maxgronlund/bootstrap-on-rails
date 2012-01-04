@@ -1,0 +1,26 @@
+.type-home data-role="page"
+
+  .foo data-role="header"
+    h1 Bootstrap with jQuery Mobile
+  
+  
+  .foo data-role="content"
+    .content-secondary
+      #jqm-homeheader
+        h1 id="jqm-logo"
+          =image_tag('jquery-logo.png')
+      p Pixels on rails
+      p class='intro'
+        strong Welcome. &nbsp;
+        'Browse the jQuery Mobile components and learn how to make rich, accessible, touch-friendly websites and apps
+      ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f"
+        li data-role="list-divider"
+          'Overview
+        
+        - if current_user
+          li class="log_out" = link_to 'Log out', log_out_path
+        - else
+          li =link_to 'Log in', log_in_path
+        li =link_to 'Posts', posts_path
+
+    .content-primary

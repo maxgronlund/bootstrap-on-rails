@@ -1,0 +1,34 @@
+.type-home data-role="page"
+
+  .foo data-role="header"
+    h1 Login
+  
+  
+  .foo data-role="content"
+    .content-secondary
+      #jqm-homeheader
+        h1 Sign in
+      p Pixels on rails
+      
+
+    .content-primary
+      = form_tag sessions_path :html => { :id => 'sign_in'} do
+
+        'email
+        br
+        = text_field_tag :email, params[:email]
+        br
+        'password
+        br
+        = password_field_tag :password
+        br
+        /= render 'checkbox'
+        = check_box_tag :remember_me, :class => "custom"
+        label for="remember_me"
+          'Remember me
+
+      .actions
+        = submit_tag  'sign in'
+        '&nbsp;
+        = link_to 'cancel', :back
+

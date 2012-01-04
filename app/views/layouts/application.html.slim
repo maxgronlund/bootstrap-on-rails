@@ -1,22 +1,13 @@
 doctype html
 html
   head
-    title Bootstrap on Rails with Mobile
-    = csrf_meta_tag
+    title Bootstrap with jQuery Mobile
 
-    -if mobile_device?
-      = stylesheet_link_tag 'jquery-mobile-1.0.css'
-      = stylesheet_link_tag 'jqm-docs.css'
-      = javascript_include_tag 'jquery'
-      = javascript_include_tag 'jquery.mobile.themeswitcher'
-      = javascript_include_tag 'jqm-docs'
-      = javascript_include_tag 'jquery.mobile-1.0.min'
-    -else
-      /[if lt IE 9]
-        script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'
-      = stylesheet_link_tag    "application"
-      = javascript_include_tag 'application'
-    end
+    /[if lt IE 9]
+      script src='http://html5shiv.googlecode.com/svn/trunk/html5.js'
+    = stylesheet_link_tag    "application"
+    = javascript_include_tag 'application'
+    = csrf_meta_tag
 
     javascript:
       var session_key      = '#{cookies[Rails.application.config.session_options[:key]]}';
@@ -25,11 +16,6 @@ html
 
   body class=("#{controller.controller_name} #{controller.controller_name}-#{params[:action]}") 
     
-    /-if mobile_device?
-    /  = link_to "Full Site", :mobile => 0
-    /-else
-    /  = link_to "Mobile Site", :mobile => 1
-
     /.div class=("background_grid" if grid_is_on?)
     = render "shared/top_menu"
     = yield
