@@ -26,10 +26,8 @@ class AvatarUploader < CarrierWave::Uploader::Base
   # Create different versions of your uploaded files:  
   cattr_accessor :version_dimensions
   self.version_dimensions = {
-    :xsmall => [32, 36],
-    :small => [66, 72],
-    :medium => [210, 252],
-    :large => [210, 252],
+    :thumb => [100, 100],
+    :large => [210, 252]
 
   }
 

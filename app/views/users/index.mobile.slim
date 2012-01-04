@@ -1,27 +1,38 @@
 .type-interior data-role="page" 
-
   .foo data-role="header" data-theme="f"
     h1 Users
     = link_to 'home', root_path
 
   .foo data-role="content"
     .content-primary
-        h2 Find
-        = form_tag users_path, :method => 'get', :id => "products_search" do
-          = text_field_tag :search, params[:search] 
-          '&nbsp;
-          = submit_tag t('system.search'), :name => nil, :class => 'btn primary'
-          '&nbsp;
-          = link_to t('system.show_all'), users_path, :class => 'btn'
-        /ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f"
-        /  li data-role="list-divider"
-        /    'Users
-        /  - @users.each do |user|
-        /    li = link_to user.name, user
-                  
-        ul data-role="listview"
-          - @users.each do |user|
-            li = link_to user.name, user
+      h2 Find
+      = form_tag users_path, :method => 'get', :id => "products_search" do
+        = text_field_tag :search, params[:search] 
+      
+        = submit_tag t('system.search'), :name => nil, :class => 'btn primary'
+        
+        = link_to t('system.show_all'), users_path, :'data-role'=>"button"
+      
+      /ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f"
+      /  li data-role="list-divider"
+      /    'Users
+      /  - @users.each do |user|
+      /    li = link_to user.name, user
+      hr
+      br         
+      ul data-role="listview"
+        - @users.each do |user|
+          li 
+            = link_to user do 
+              = image_tag(user.image_url:thumb)
+              h3 = user.name
+              p = user.role
+              
+              
+
+      
+    .content-secondary
+      'goes to the side
 
 
 
@@ -31,10 +42,7 @@
 
 
 
-
-
-
-        /= paginate @users
+/= paginate @users
 
     
 
