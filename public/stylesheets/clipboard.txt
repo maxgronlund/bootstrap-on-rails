@@ -1,0 +1,17 @@
+.grid-3
+  | left column
+
+.grid-4
+  - if @welcome
+    h3.c20
+      = @welcome.title
+    
+    = markdown(@welcome.body)
+    br
+    = link_to t('system.edit'), edit_text_content_path(@welcome)
+
+.grid-2
+  
+
+.grid-3
+  | rigth column
