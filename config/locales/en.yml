@@ -71,6 +71,6 @@ en:
     pagination:  
       first: 'first'
       last: 'last'
-      previous: "&larr; prev"  
-      next: "next &rarr;"  
+      previous: "&larr; Previous"  
+      next: "Next &rarr;"  
       truncate: "&hellip;"
