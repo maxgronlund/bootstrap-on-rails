@@ -4,14 +4,16 @@ class UsersController < InheritedResources::Base
 
   helper_method :sort_column, :sort_direction
 
-  
   def index
     @menu='admin'
     #return_path = users_path # or request.referer
     session[:go_to_after_edit] = users_path
     #@users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(2)
-    @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(2)
-
+    if mobile_device?
+      @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(10)
+    else
+      @users = User.search(params[:search]).order(sort_column + " " + sort_direction).page(params[:page]).per(25)
+    end
   end
 
   def show
@@ -38,10 +40,22 @@ class UsersController < InheritedResources::Base
   def create
     create! do |success, failure|
       success.html do
+        
+        unless current_user
+          # log users created by themself in 
+           user = User.authenticate(@user.email, @user.password)
+           cookies[:auth_token] = user.auth_token
+           session[:user_id] = user.id
+        end
+
         if params[:user][:image]
           redirect_to crop_user_path(@user), :notice => "Signed up!"
         else
-          redirect_to user_path(@user), :notice => "Signed up!"
+          if mobile_device?
+            redirect_to users_url
+          else
+            redirect_to user_path(@user), :notice => "Signed up!"
+          end
         end
       end
       #flash.error = "You are fuckd!"
@@ -77,6 +91,12 @@ class UsersController < InheritedResources::Base
     
     goto = session.delete(:go_to_after_edit) || root_path
     redirect_to goto
+  end
+  
+  def destroy
+    @user = User.find(params[:id])
+    @user.destroy
+    redirect_to users_url 
   end
   
   

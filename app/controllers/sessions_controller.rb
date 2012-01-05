@@ -22,8 +22,8 @@ class SessionsController < ApplicationController
   
   def destroy
     mesage = 'Bye bye '+ current_user.name + '! hope to see you back soon'
-      cookies.delete(:auth_token)
-      redirect_to root_url, :notice => mesage
+    cookies.delete(:auth_token)
+    redirect_to root_url, :notice => mesage
   end
   
 end

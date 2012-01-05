@@ -1,8 +1,7 @@
-.type-home data-role="page"
-
-  .foo data-role="header"
-    h1 Posts
-    = link_to 'home', root_path
+.type-interior data-role="page"
+  .foo data-role="header" data-theme="f"
+    h1 Sign up
+    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-left jqm-home"
   
   
   .foo data-role="content"
@@ -30,7 +29,7 @@
               /= link_to 'Edit', edit_post_path(post)
               /= link_to 'Destroy', post, :confirm => 'Are you sure?', :method => :delete
 
-      = link_to 'New Post', new_post_path, :"data-role"=>"button"
+      = link_to 'New Post', new_post_path, :"data-role"=>"button" 
         
 
 

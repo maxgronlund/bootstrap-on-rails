@@ -1,7 +1,7 @@
 .type-interior data-role="page"
   .foo data-role="header" data-theme="f"
     h1 Log in
-    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-right jqm-home"
+    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-left jqm-home"
       
   .foo data-role="content"
     .content-primary
@@ -20,5 +20,5 @@
         label for="remember_me" Remember me
 
         = submit_tag  'Sign in', :method => 'post'
-        = link_to 'Not a menber?', root_path, :'data-role'=>"button"
+        = link_to 'Not a menber?', sign_up_path, :'data-role'=>"button"
 

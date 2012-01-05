@@ -1,7 +1,7 @@
-.type-interior data-role="page" 
+.type-interior data-role="page"
   .foo data-role="header" data-theme="f"
     h1 Users
-    = link_to 'home', root_path
+    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-left jqm-home"
 
   .foo data-role="content"
     .content-primary
@@ -28,7 +28,7 @@
             = link_to user do 
               = image_tag(user.image_url:thumb)
               h3 = user.name
-              p = user.role
+              p = user.email
       hr
       = paginate @users     
               
