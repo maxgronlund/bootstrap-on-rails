@@ -2,6 +2,6 @@
   .pagination
     /.foo data-role="controlgroup" data-type="horizontal"
     /= first_page_tag 
-    = prev_page_tag unless current_page.first?
-    = next_page_tag unless current_page.last?
+    == prev_page_tag unless current_page.first?
+    == next_page_tag unless current_page.last?
     /= last_page_tag
