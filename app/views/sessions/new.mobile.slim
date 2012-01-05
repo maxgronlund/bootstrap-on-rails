@@ -18,7 +18,7 @@
         /= render 'checkbox'
         = check_box_tag :remember_me, :class => "custom"
         label for="remember_me" Remember me
-
-        = submit_tag  'Sign in', :method => 'post'
+        hr
+        = submit_tag  'Sign in', :method => 'post', :'data-theme' => 'a'
         = link_to 'Not a menber?', sign_up_path, :'data-role'=>"button"
 

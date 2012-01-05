@@ -8,11 +8,10 @@
     .content-secondary
       #jqm-homeheader
         h1 id="jqm-logo"
-          =image_tag('jquery-logo.png')
-      p Pixels on rails
+          =image_tag('mobile_on_rails_logo.png')
       p class='intro'
         strong Welcome. &nbsp;
-        'Browse the jQuery Mobile components and learn how to make rich, accessible, touch-friendly websites and apps
+        'A starting point for a site based on bootstrap and JQuery mobile
       ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="f"
         li data-role="list-divider"
           'Overview
@@ -21,6 +20,7 @@
           li class="log_out" = link_to 'Log out', log_out_path
         - else
           li =link_to 'Log in', log_in_path
+          li = link_to 'Sign up', sign_up_path
         li =link_to 'Posts', posts_path
         li =link_to 'Users', users_path
 
