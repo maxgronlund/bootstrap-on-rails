@@ -42,7 +42,7 @@
                     '&nbsp;
                     = link_to ' ?', '#', :rel=>'twipsy', :title=>'You cant delete me'
               
-        = paginate(@users).html_safe
+        == paginate(@users)
         br
     
     = render 'shared/twipsy'
