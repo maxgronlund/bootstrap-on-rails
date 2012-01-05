@@ -10,10 +10,10 @@
 // require_tree ../../../vendor/assets/javascripts
 // require_directory .
 //= require rails.validations
+
+
+
 //= require jquery.tablesorter.min
-
-
-
 //= require 01_bootstrap-modal
 //= require 02_bootstrap-alerts
 //= require 03_bootstrap-twipsy
