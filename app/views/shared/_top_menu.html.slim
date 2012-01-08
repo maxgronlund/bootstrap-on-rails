@@ -6,7 +6,7 @@
         li class="home" = link_to 'Home', root_path
         - if can_edit?
           li class="admin" = link_to 'Admin', admin_index_path
-      
+        li class="audio" = link_to 'Audio', audio_tracks_path
       - if  current_user
         .pull-right
           ul class="nav"

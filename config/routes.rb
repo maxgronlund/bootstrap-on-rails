@@ -1,9 +1,9 @@
 RailsTemplateR31::Application.routes.draw do
 
+  resources :audio_tracks
   resources :posts
 
 #  get "password_resets/new"
-
   
   get "sign_up" => "users#new", :as => "sign_up"
   get "log_in" => "sessions#new", :as => "log_in"

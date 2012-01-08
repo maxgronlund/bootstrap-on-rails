@@ -1,1 +1,17 @@
-== render 'form'
+.container
+  .content.top-void
+    = render 'shared/error_messages', :taget => @user
+    .page-header
+     h1 Sign up <small>Join the club</small>
+     .row
+       .span6
+         h3 Role based user management
+         'Althoug the site is tiny it has the features needed by a community site. different users can have different roles
+         - if @user.image?
+          ul class="media-grid"
+            li =link_to image_tag((@user.image_url :large), :class =>"thumbnail"), '#'
+          -if can_edit?
+            .pull-right
+              = link_to t('image.re_crop'), crop_user_path(@user, :version => :large)
+       .span10
+         == render 'form'

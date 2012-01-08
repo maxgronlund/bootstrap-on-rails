@@ -22,6 +22,9 @@
 //= require 06_bootstrap-scrollspy
 //= require 07_bootstrap-tabs
 //= require 08_bootstrap-buttons
+
+//= require 01_soundmanager2-nodebug-jsmin
+//= require 02_inlineplayer
      
 
 

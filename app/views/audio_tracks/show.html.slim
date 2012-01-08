@@ -1,0 +1,32 @@
+.container
+  .content.top-void
+    = render 'shared/breadcrumbs', :breadcrumbs => @breadcrumbs unless @breadcrumbs.nil?
+    .page-header
+      h1  
+        =@audio_track.title 
+        '&nbsp;
+        small Listen
+
+
+  #sm2-container
+
+
+  ul class="graphic
+    li = link_to @audio_track.title, @audio_track.audio_file_url
+    li = link_to @audio_track.title, @audio_track.audio_file_url
+  == render 'player'
+
+/	= link_to 'Edit', edit_audio_track_path(@audio_track)
+/	'|
+/	= link_to 'Back', audio_tracks_path
+
+
+/  li><a href="../_mp3/rain.mp3">Rain</a></li>
+/  li><a href="../_mp3/walking.mp3">Walking</a></li>
+/  li><a href="http://www.freshly-ground.com/misc/music/carl-3-barlp.mp3">Barrlping with Carl (featureblend.com)</a></li>
+/  li><a href="http://www.freshly-ground.com/data/audio/binaural/Mak.mp3">Angry cow sound?</a></li>
+/
+/  <li><a href="http://www.freshly-ground.com/data/audio/binaural/Things that open, close and roll.mp3">Things that open, close and roll</a></li>
+/  <li><a href="http://www.freshly-ground.com/misc/music/20060826%20-%20Armstrong.mp3">20060826 - Armstrong</a></li>
+/  <li><a href="http://freshly-ground.com/data/video/Rain%20on%20Car%20Roof.aac">Rain On Car Roof (AAC Audio)</a></li>
+/ </ul>

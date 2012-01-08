@@ -23,3 +23,4 @@ all the same as less-rails-bootstrap
 -----------------------------------------
 I ended up with 'simple is better'
 all i did was to add the bootstrap.css file and the javascripts, then i only rely on twitter and nothing happens automatic in the background
+

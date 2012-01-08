@@ -1,0 +1,21 @@
+h1 Listing audio_tracks
+
+table
+  tr
+    th Title
+    th Audiofile
+    th
+    th
+    th
+
+  - @audio_tracks.each do |audio_track|
+    tr
+      td= audio_track.title
+      td= audio_track.audio_file
+      td= link_to 'Show', audio_track
+      td= link_to 'Edit', edit_audio_track_path(audio_track)
+      td= link_to 'Destroy', audio_track, :confirm => 'Are you sure?', :method => :delete
+
+br
+
+= link_to 'New Audio track', new_audio_track_path
