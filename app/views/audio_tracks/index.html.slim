@@ -1,21 +1,41 @@
-h1 Listing audio_tracks
+.container
+  .content.top-void
+    = render 'shared/breadcrumbs', :breadcrumbs => @breadcrumbs unless @breadcrumbs.nil?
+    .page-header
+      h1  
+        'Audio tracks 
+        '&nbsp;
+        small Listen
 
-table
-  tr
-    th Title
-    th Audiofile
-    th
-    th
-    th
 
-  - @audio_tracks.each do |audio_track|
-    tr
-      td= audio_track.title
-      td= audio_track.audio_file
-      td= link_to 'Show', audio_track
-      td= link_to 'Edit', edit_audio_track_path(audio_track)
-      td= link_to 'Destroy', audio_track, :confirm => 'Are you sure?', :method => :delete
+  #sm2-container
 
-br
+  
+  ul class="graphic
+    - @audio_tracks.each do |audio_track|
+      li = link_to audio_track.title, audio_track.audio_file_url
 
-= link_to 'New Audio track', new_audio_track_path
+  == render 'player'
+  = link_to 'New Audio track', new_audio_track_path
+
+/h1 Listing audio_tracks
+/
+/table
+/  tr
+/    th Title
+/    th Audiofile
+/    th
+/    th
+/    th
+/
+/  - @audio_tracks.each do |audio_track|
+/    tr
+/      td= audio_track.title
+/      td= audio_track.audio_file
+/      td= link_to 'Show', audio_track
+/      td= link_to 'Edit', edit_audio_track_path(audio_track)
+/      td= link_to 'Destroy', audio_track, :confirm => 'Are you sure?', :method => :delete
+/
+/br
+
+
