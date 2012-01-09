@@ -1,0 +1,21 @@
+.type-interior data-role="page"
+  .foo data-role="header" data-theme="f"
+    h1 Users
+    = link_to 'home', root_path, :'data-icon' =>"home", :'data-iconpos'=>"notext", :'data-direction'=>"reverse", :class=>"ui-btn-left jqm-home"
+
+  .foo data-role="content"
+    .content-primary
+      h2 Tracks
+
+      #sm2-container
+      
+      
+      ul class="graphic"
+        - @audio_tracks.each do |audio_track|
+          li = link_to audio_track.title, audio_track.audio_file_url
+      
+      == render 'player'
+
+
+
+
