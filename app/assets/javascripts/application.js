@@ -14,14 +14,6 @@
 
 
 //= require jquery.tablesorter.min
-//= require 01_bootstrap-modal
-//= require 02_bootstrap-alerts
-//= require 03_bootstrap-twipsy
-//= require 04_bootstrap-popover
-//= require 05_bootstrap-dropdown
-//= require 06_bootstrap-scrollspy
-//= require 07_bootstrap-tabs
-//= require 08_bootstrap-buttons
 
 //= require 01_soundmanager2-nodebug-jsmin
 //= require 02_inlineplayer

@@ -8,7 +8,7 @@ gem 'mysql2'
 
 # Asset template engines
 
-#gem 'less-rails'
+gem 'less-rails'
 #gem 'less-rails-bootstrap'
 
 #gem 'compass_twitter_bootstrap'
