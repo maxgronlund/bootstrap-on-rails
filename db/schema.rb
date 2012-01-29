@@ -16,15 +16,15 @@ ActiveRecord::Schema.define(:version => 20120108202721) do
   create_table "audio_tracks", :force => true do |t|
     t.string   "title"
     t.string   "audio_file"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "posts", :force => true do |t|
     t.string   "title"
     t.text     "body"
-    t.datetime "created_at"
-    t.datetime "updated_at"
+    t.datetime "created_at", :null => false
+    t.datetime "updated_at", :null => false
   end
 
   create_table "text_contents", :force => true do |t|
