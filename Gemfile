@@ -1,5 +1,5 @@
 source 'http://rubygems.org' 
-gem 'rails', '~> 3.1.0'
+gem 'rails', '~> 3.2.0'
 gem 'rails-i18n'
 
 # Bundle edge Rails instead:
@@ -13,9 +13,9 @@ gem 'less-rails'
 
 #gem 'compass_twitter_bootstrap'
 
-gem 'sass-rails', "~> 3.1.0"
-gem 'coffee-script'
-gem 'uglifier'
+gem 'sass-rails', " ~> 3.2.3"
+gem 'coffee-rails', " ~> 3.2.1"
+gem 'uglifier', '>= 1.0.3'
 gem 'jquery-rails'
 gem 'inherited_resources'
 gem "cancan"
@@ -55,7 +55,7 @@ group :test do
   #gem 'autotest-fsevent'
   #gem 'autotest-growl'
   gem 'database_cleaner'
-  gem 'factory_girl_rails'
+#  gem 'factory_girl_rails'
   gem 'remarkable_activerecord', '~> 4.0.0.alpha4'
   #gem 'ruby-fsevent'
   #gem 'watchr'
