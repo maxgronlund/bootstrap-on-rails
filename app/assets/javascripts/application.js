@@ -14,10 +14,10 @@
 
 
 //= require jquery.tablesorter.min
-//= require twitter_bootstrap
+// require twitter_bootstrap
 
-//= require 01_soundmanager2-nodebug-jsmin
-//= require 02_inlineplayer
+// require 01_soundmanager2-nodebug-jsmin
+// require 02_inlineplayer
      
 
 
